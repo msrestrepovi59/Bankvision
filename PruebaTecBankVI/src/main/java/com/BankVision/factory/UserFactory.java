@@ -1,10 +1,11 @@
-package com.BankVision.PruebaTecBankV;
-import com.BankVision.PruebaTecBankV.User;
+package com.BankVision.factory;
 import java.time.LocalDate;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+
+import com.BankVision.model.User;
 
 public class UserFactory {
 

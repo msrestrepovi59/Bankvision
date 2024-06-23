@@ -1,4 +1,4 @@
-package com.BankVision.PruebaTecBankV;
+package com.BankVision.service;
 
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,18 +6,22 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.BankVision.model.User;
 import com.BankVision.repository.UserRepository;
+
+import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 
 
 @Service
+@RequiredArgsConstructor
 public class UserService {
 
-   // @Autowired
+    
     private UserRepository userRepository;
     
-   // @Autowired
+   
     private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
     
     
@@ -42,11 +46,6 @@ public class UserService {
 
     public void deleteUser(String numeroIdentificacion) {
         userRepository.deleteById(numeroIdentificacion);
-    }
-
-    public User login(String numeroIdentificacion, String contrasena) {
-        return userRepository.findByInumAndPass(numeroIdentificacion, contrasena);
-    }
-    
+    } 
    
 }
